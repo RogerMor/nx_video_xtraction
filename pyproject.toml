@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nx_video_extraction"
+version = "0.1.0"
+description = "Code to extract random videos from the NX witness server"
+readme = "README.rst"
+authors = [
+  {name = "Roger Mor Crespo", email = "roger.mor@easeefy.com"}
+]
+maintainers = [
+  {name = "Roger Mor Crespo", email = "roger.mor@easeefy.com"}
+]
+classifiers = [
+
+]
+license = {text = "Not open source"}
+dependencies = [
+  
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+
+bugs = "https://github.com/RogerMor/nx_video_extraction/issues"
+changelog = "https://github.com/RogerMor/nx_video_extraction/blob/master/changelog.md"
+homepage = "https://github.com/RogerMor/nx_video_extraction"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaults
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
