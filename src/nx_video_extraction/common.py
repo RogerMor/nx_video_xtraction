@@ -21,7 +21,7 @@ CONFIGURATION_DEFAULT = {
 }
 
 NX_CAMERA_ID = os.environ.get("NX_CAMERA_ID", "df0a5534-2438-5fe4-cfd9-e8035611fe1e")
-NX_SERVER_IP = os.environ.get("NX_SERVER_IP", "192.168.1.135")
+NX_SERVER_IP = os.environ.get("NX_SERVER_IP", "10.147.20.112")
 NX_ENDPOINT = "https://{}:7001".format(NX_SERVER_IP)
 NX_USERNAME = os.environ.get("NX_USERNAME", 'admin')
 NX_PASSWORD = os.environ.get("NX_PASSWORD", 'PerAdmin92')
