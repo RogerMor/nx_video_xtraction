@@ -24,7 +24,7 @@ def process(token: TokenNX, data: RecordData):
     """Descarga un video desde el sistema NX y lo guarda en una ubicación específica."""
     print("Descargando video desde", data.start, "hasta", int(data.start) + data.duration * 1000)
     resp = requests.get(
-        NX_ENDPOINT + f"/hls/{data.camera_id}.mkv?pos={data.start}&duration={data.duration}&{data.quality}=true",
+        NX_ENDPOINT + f"/hls/{data.camera_id}.mkv?pos={data.start}&duration={data.duration}&resolution=highest",
         headers={"Authorization": f'Bearer {token["token"]}'},
         verify=False
     )
@@ -75,7 +75,7 @@ def record_video(nx_params: NxParams, camera_id: str, output_path: str, quality:
             camera_id=camera_id,
             start=str(random_start),  # Convertir a cadena
             duration=120,  # 2 minutos en segundos
-            quality=quality,
+            quality="hi",
             path=output_file
         )
 
